@@ -1,0 +1,104 @@
+body{
+    background-color: rgb(146, 146, 231);
+    margin: 0;
+    font-family: Arial;
+}
+.top-bar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    background-color: black;
+}
+
+.top-bar > a {
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.top-bar > a:hover::after {
+    width: 100%;
+}
+
+.top-bar > a::after{
+    content: '';
+    display: block;
+    width: 0;
+    margin-top: 2px;
+    height: 2px;
+    transition: width 0.3s;
+    background-color: white;
+}
+
+.top-bar > a.active::after{
+    width: 100%;
+}
+
+#showoff{
+    width: 400px;
+    margin: auto;
+    background-color: white;
+    box-sizing: content-box;
+    padding: 0 50px 20px 40px;  
+}
+
+#showoff > form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item:hover > .button{
+    visibility: visible;
+}
+
+.item{
+    display: flex;
+}
+
+.button button{
+    display: block;
+    text-align: center;
+    width: 23px;
+    box-sizing: border-box;
+}
+
+.button{
+    visibility: hidden;
+}
+
+.item-content{
+    width: 300px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    box-sizing: content-box;
+    padding: 10px;
+    border: 1px dashed black;
+    margin-bottom: 20px;
+    margin-right: 10px;
+}
+
+.item-content > label:not(:first-child){
+    margin-top: 10px;
+}
+
+#showoff > form > button{
+    width: 40px;
+}
+
+textarea{
+    resize: none;
+}
+
+input + span{
+    display: none;
+    color: red;
+    padding-top: 3px;
+    font-size: 12px;
+}
+
+.addInfor{
+    margin-right: 15px;
+}
