@@ -43,6 +43,9 @@ function createJson($post)
     for ($i = 0; $i < $length; $i++) {
         $item_info = new itemI();
         $item_info->item = explode(',', $post[fileds * $i]);
+        $ids_length = count($item_info->item);
+        for ($j = 0; $j < $ids_length; $j++)
+            $item_info->item[$j] = (int)($item_info->item[$j]);
         if (!empty($post[fileds * $i + 1]))
             $item_info->title = $post[fileds * $i + 1];
         if (!empty($post[fileds * $i + 2]))
