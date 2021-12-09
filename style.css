@@ -13,7 +13,7 @@ body{
 #showoff > .list-item{
     margin-left: 2%;
     background-color: white;
-    width: 364px;
+    width: 384px;
 }
 
 #showoff > .form{
@@ -189,5 +189,22 @@ li:hover{
 @media(max-width:500px){
     #showoff{
         margin-top: 6%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    #showoff > .list-item{
+        margin-top: 10px;
+        margin-left: 0;
+    }
+
+    .list-item > .top{
+        padding: 8px 0;
+    }
+
+    body{
+        background-size: cover;
+        
     }
 }
