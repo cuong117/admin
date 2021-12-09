@@ -46,15 +46,16 @@ function createJson($post)
         $ids_length = count($item_info->item);
         for ($j = 0; $j < $ids_length; $j++)
             $item_info->item[$j] = (int)($item_info->item[$j]);
-        if (!empty($post[fileds * $i + 1]))
+        if (!empty($post[fileds * $i + 5]))
             $item_info->title = $post[fileds * $i + 5];
-        if (!empty($post[fileds * $i + 2]))
+        if (!empty($post[fileds * $i + 4]))
             $item_info->author = $post[fileds * $i + 4];
         if (!empty($post[fileds * $i + 3]))
             $item_info->material = $post[fileds * $i + 3];
-        if (!empty($post[fileds * $i + 4]))
+        if (!empty($post[fileds * $i + 2]))
             $item_info->desc = $post[fileds * $i + 2];
-        if (!empty($post[fileds * $i + 5]))
+            print_r($item_info->desc);
+        if (!empty($post[fileds * $i + 1]))
             $item_info->type = $post[fileds * $i + 1];
         $area = $post[fileds * $i];
         array_push($trealet->$area, $item_info);
