@@ -1,6 +1,6 @@
 <?php
 
-define('fileds', 7);
+define('fileds', 13);
 
 class itemI
 {
@@ -36,29 +36,57 @@ function createJson($post)
     $length = count($post) / fileds;
 
     for ($i = 0; $i < $length; $i++) {
-        $area = $post[fileds * $i];
+        $area = $post[fileds * $i + 6];
         $trealet->$area = array();
     }
 
     for ($i = 0; $i < $length; $i++) {
         $item_info = new itemI();
-        $item_info->item = explode(',', $post[fileds * $i + 6]);
+        $item_info->item = explode(',', $post[fileds * $i + 12]);
         $ids_length = count($item_info->item);
         for ($j = 0; $j < $ids_length; $j++)
             $item_info->item[$j] = (int)($item_info->item[$j]);
-        if (!empty($post[fileds * $i + 5]))
-            $item_info->title = $post[fileds * $i + 5];
-        if (!empty($post[fileds * $i + 4]))
-            $item_info->author = $post[fileds * $i + 4];
-        if (!empty($post[fileds * $i + 3]))
-            $item_info->material = $post[fileds * $i + 3];
-        if (!empty($post[fileds * $i + 2]))
-            $item_info->desc = $post[fileds * $i + 2];
-            print_r($item_info->desc);
-        if (!empty($post[fileds * $i + 1]))
-            $item_info->type = $post[fileds * $i + 1];
-        $area = $post[fileds * $i];
+        if (!empty($post[fileds * $i + 11]))
+            $item_info->title = $post[fileds * $i + 11];
+        if (!empty($post[fileds * $i + 10]))
+            $item_info->author = $post[fileds * $i + 10];
+        if (!empty($post[fileds * $i + 9]))
+            $item_info->material = $post[fileds * $i + 9];
+        if (!empty($post[fileds * $i + 8]))
+            $item_info->desc = $post[fileds * $i + 8];
+        if (!empty($post[fileds * $i + 7]))
+            $item_info->type = $post[fileds * $i + 7];
+
+        $area = $post[fileds * $i + 6];
         array_push($trealet->$area, $item_info);
+
+        if (!empty($post[fileds * $i + 5])) {
+            $item_info->interactive = new stdClass();
+            $item_info->interactive->question = $post[fileds * $i + 5];
+        }
+
+
+        if (!empty($post[fileds * $i + 4]) && !empty($post[fileds * $i + 3]) && !empty($post[fileds * $i + 2]) && !empty($post[fileds * $i + 1])) {
+            $item_info->interactive->answer = array();
+            array_push($item_info->interactive->answer, $post[fileds * $i + 4], $post[fileds * $i + 3], $post[fileds * $i + 2], $post[fileds * $i + 1]);
+        }
+
+        if (!empty($post[fileds * $i])) {
+            switch ($post[fileds * $i]) {
+                case "A":
+                    $item_info->interactive->trueAns = $post[fileds * $i + 4];
+                    break;
+                case "B":
+                    $item_info->interactive->trueAns = $post[fileds * $i + 3];
+                    break;
+                case "C":
+                    $item_info->interactive->trueAns = $post[fileds * $i + 2];
+                    break;
+                case "D":
+                    $item_info->interactive->trueAns = $post[fileds * $i + 1];
+                    break;
+            }
+        }
     }
 
     $file = new file();

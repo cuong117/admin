@@ -1,1 +1,71 @@
-{"trealet":{"exec":"project16","A":[{"title":"chưa rõ","author":"chưa rõ","type":"chưa rõ","material":"chưa rõ","desc":"\"dskds\"","item":[1]}]}}
+{
+    "trealet": {
+        "exec": "project16",
+        "sdsd": [
+            {
+                "title": "fdfdf",
+                "author": "vvcvc",
+                "type": "cvcxc",
+                "material": "xccxc",
+                "desc": "ccvcv",
+                "item": [
+                    222
+                ],
+                "interactive": {
+                    "question": "eww",
+                    "answer": [
+                        "sdsds",
+                        "xvxvx",
+                        "vcvc",
+                        "er"
+                    ],
+                    "trueAns": "sdsds"
+                }
+            }
+        ],
+        "A2": [
+            {
+                "title": "sfsf",
+                "author": "ssf",
+                "type": "ấ",
+                "material": "sdsd",
+                "desc": "dsds",
+                "item": [
+                    0
+                ],
+                "interactive": {
+                    "question": "dsds",
+                    "answer": [
+                        "ggd",
+                        "dfs",
+                        "dssd",
+                        "dfdf"
+                    ],
+                    "trueAns": "dfdf"
+                }
+            }
+        ],
+        "sd": [
+            {
+                "title": "đ",
+                "author": "dsdsd",
+                "type": "fdfd",
+                "material": "kjkds",
+                "desc": "df",
+                "item": [
+                    0
+                ],
+                "interactive": {
+                    "question": "dsd",
+                    "answer": [
+                        "a",
+                        "sds",
+                        "fdfd",
+                        "dsfs"
+                    ],
+                    "trueAns": "fdfd"
+                }
+            }
+        ]
+    }
+}

@@ -2,6 +2,7 @@ body{
     background-image: url('./img/background.jpg');
     background-size: cover 100vh;
     background-repeat: no-repeat;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #showoff {
@@ -32,7 +33,6 @@ form{
 }
 
 h1{
-    font-family: Arial, Helvetica, sans-serif;
     margin-top: 0;
 }
 
@@ -107,7 +107,7 @@ span{
 }
 
 form > button {
-    margin-top: 9px;
+    margin-top: 10px;
 }
 
  button {
@@ -185,6 +185,18 @@ li:hover{
 
 .selected{
     border-color: green;
+}
+
+.item div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item div input{
+    margin-right: 20px;
+    margin-left: 5px;
+    cursor: pointer;
 }
 @media(max-width:500px){
     #showoff{

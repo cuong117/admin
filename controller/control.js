@@ -10,9 +10,13 @@ liSelected.classList.add('selected')
 
 document.querySelector('[type = "submit"]').addEventListener('click', e => {
     var accept = false;
+    var require = document.querySelectorAll('.require')
     var id = document.querySelector('#img' + liSelected.classList[0].split('_')[1])
     var area = document.querySelector('#area' + liSelected.classList[0].split('_')[1])
     e.preventDefault()
+    require.forEach(el => {
+        
+    })
     if (id.value.trim() === "") {
         var spanErr = id.previousSibling.previousSibling
         spanErr.style.display = "block"

@@ -1,5 +1,5 @@
 <?php
-    require_once('./export/export.php')
+require_once('./export/export.php')
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,6 +18,23 @@
             <form action="" method="post" id="info">
                 <h1>Thông tin hiện vật</h1>
                 <div class="item-content0 item">
+                    <div>
+                        A: <input type="radio" name='Ans' value="A">
+                        B: <input type="radio" name='Ans' value="B">
+                        C: <input type="radio" name='Ans' value="C">
+                        D: <input type="radio" name='Ans' value="D">
+                    </div>
+                    <label for="">Đáp án đúng: </label>
+                    <input type="text" name='D0' id="D0">
+                    <label for="D0">Đáp án D: </label>
+                    <input type="text" name='C0' id="C0">
+                    <label for="C0">Đáp án C: </label>
+                    <input type="text" name='B0' id="B0">
+                    <label for="B0">Đáp án B: </label>
+                    <input type="text" name='A0' id="A0">
+                    <label for="A0">Đáp án A: </label>
+                    <input type="text" name='question0' id="question0">
+                    <label for="question0">Câu hỏi</label>
                     <span>Trường trên không được để trống</span>
                     <input name="area0" id="area0" class="require" type="text">
                     <label for="area0">Khu vực:</label>
@@ -59,7 +76,7 @@
     <!-- <script>
         var input = document.querySelectorAll('input')
         var textarea = document.querySelector('textarea')
-        input.forEach(element => {
+        input.forEach(element    => {
             element.setAttribute('data-empty', true)
             element.onchange = e => {
                 e.target.setAttribute('data-empty', !e.target.value)
@@ -72,7 +89,7 @@
         }
     </script> -->
 
-    <script src="./controller/controlShowoff.js"></script>
+    <script src="./controller/control.js"></script>
 </body>
 
 </html>
