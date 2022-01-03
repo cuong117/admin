@@ -19,21 +19,26 @@ require_once('./export/export.php')
                 <h1>Thông tin hiện vật</h1>
                 <div class="item-content0 item">
                     <div>
-                        A: <input type="radio" name='Ans' value="A">
-                        B: <input type="radio" name='Ans' value="B">
-                        C: <input type="radio" name='Ans' value="C">
-                        D: <input type="radio" name='Ans' value="D">
+                        A: <input type="radio" name='Ans0' value="A" checked>
+                        B: <input type="radio" name='Ans0' value="B">
+                        C: <input type="radio" name='Ans0' value="C">
+                        D: <input type="radio" name='Ans0' value="D">
                     </div>
                     <label for="">Đáp án đúng: </label>
-                    <input type="text" name='D0' id="D0">
+                    <span>Trường trên không được để trống</span>
+                    <input type="text" name='D0' id="D0" class="require">
                     <label for="D0">Đáp án D: </label>
-                    <input type="text" name='C0' id="C0">
+                    <span>Trường trên không được để trống</span>
+                    <input type="text" name='C0' id="C0" class="require">
                     <label for="C0">Đáp án C: </label>
-                    <input type="text" name='B0' id="B0">
+                    <span>Trường trên không được để trống</span>
+                    <input type="text" name='B0' id="B0" class="require">
                     <label for="B0">Đáp án B: </label>
-                    <input type="text" name='A0' id="A0">
+                    <span>Trường trên không được để trống</span>
+                    <input type="text" name='A0' id="A0" class="require">
                     <label for="A0">Đáp án A: </label>
-                    <input type="text" name='question0' id="question0">
+                    <span>Trường trên không được để trống</span>
+                    <input type="text" name='question0' id="question0" class="require">
                     <label for="question0">Câu hỏi</label>
                     <span>Trường trên không được để trống</span>
                     <input name="area0" id="area0" class="require" type="text">
@@ -69,25 +74,7 @@ require_once('./export/export.php')
                 </ul>
             </div>
         </div>
-        <!-- <div class="separator">Hoặc</div>
-        <button>Nhập Thông Tin Cho MiniGame </button> -->
     </div>
-
-    <!-- <script>
-        var input = document.querySelectorAll('input')
-        var textarea = document.querySelector('textarea')
-        input.forEach(element    => {
-            element.setAttribute('data-empty', true)
-            element.onchange = e => {
-                e.target.setAttribute('data-empty', !e.target.value)
-            }
-        })
-
-        textarea.setAttribute('data-empty', true)
-        textarea.onchange = e => {
-            e.target.setAttribute('data-empty', !e.target.value)
-        }
-    </script> -->
 
     <script src="./controller/control.js"></script>
 </body>

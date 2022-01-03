@@ -10,25 +10,21 @@ liSelected.classList.add('selected')
 
 document.querySelector('[type = "submit"]').addEventListener('click', e => {
     var accept = false;
+    var require = document.querySelectorAll('.item-content' + liSelected.classList[0].split('_')[1] + ' .require')
     var id = document.querySelector('#img' + liSelected.classList[0].split('_')[1])
-    var area = document.querySelector('#area' + liSelected.classList[0].split('_')[1])
     e.preventDefault()
-    if (id.value.trim() === "") {
-        var spanErr = id.previousSibling.previousSibling
-        spanErr.style.display = "block"
-    } else {
-        var spanErr = id.previousSibling.previousSibling
-        spanErr.style.display = "none"
-        accept = true
-    }
-    if (area.value.trim() === "") {
-        var spanErr = area.previousSibling.previousSibling
-        spanErr.style.display = "block"
-    } else {
-        var spanErr = area.previousSibling.previousSibling
-        spanErr.style.display = "none"
-        accept = true
-    }
+
+    require.forEach(el => {
+        if (el.value.trim() === "") {
+            var spanErr = el.previousSibling.previousSibling
+            spanErr.style.display = "block"
+            accept = false
+        } else {
+            var spanErr = el.previousSibling.previousSibling
+            spanErr.style.display = "none"
+            accept = true
+        }
+    })
 
     if (accept) {
         var title = document.querySelector('#title' + liSelected.classList[0].split('_')[1])
@@ -37,6 +33,21 @@ document.querySelector('[type = "submit"]').addEventListener('click', e => {
             div.textContent = id.value.trim()
         else
             div.textContent = title.value.trim()
+    }
+})
+
+document.querySelectorAll('[type = "submit"]')[1].addEventListener('click', e => {
+    var require = document.querySelectorAll('.require')
+    var upload = true
+    require.forEach(el => {
+        if (el.value.trim() === "") {
+            upload = false;
+        }
+    })
+
+    if(!upload){
+        alert('Bạn có trường chưa nhập')
+        e.preventDefault()
     }
 })
 
@@ -108,9 +119,9 @@ function addlistener(element, li) {
         if (item_count > 1) {
             var parentNode = ev.target.parentNode
             var item = document.querySelector('.item-content' + parentNode.classList[0].split('_')[1])
-            if(item === itemShowed){
+            if (item === itemShowed) {
                 liSelected = parentNode.previousElementSibling
-                if(!liSelected || liSelected.nodeName === '#text')
+                if (!liSelected || liSelected.nodeName === '#text')
                     liSelected = parentNode.nextElementSibling
                 liSelected.classList.add('selected')
                 itemShowed = document.querySelector('.item-content' + liSelected.classList[0].split('_')[1])
